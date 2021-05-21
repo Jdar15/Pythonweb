@@ -25,7 +25,7 @@
     - name: generate docker image
       shell: cd /app && docker build -t formation/java:1.0 .
     - name: suppression du conteneur si existant
-      shell: docker rm -f conteneur_app > dev/null 2>&1
+      shell: docker rm -f conteneur_app
       ignore_errors: true
     - name: execution of the container
       shell: docker run -p 5000:5000 -d --rm --name conteneur_app formation/java:1.0
