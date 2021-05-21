@@ -14,10 +14,11 @@
         mode: '0777'
         owner: ec2-user
     - name: copy a local projet_python.tar.gz to the remote /app
-      copy:
-        src: /var/lib/jenkins/workspace/Pythonapp/projet_python/files/projet_python.tar.gz
+      template:
+        src: projet_python.tar.gz
         dest: /app
         mode: 0644
+        extras: '-vvv'
     - name: dezipper le fichier
       shell: tar -xzf projet_python.tar.gz
     - name: generate docker image
