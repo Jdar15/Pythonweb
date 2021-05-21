@@ -13,7 +13,7 @@
         state: directory
         mode: '0777'
         owner: ec2-user
-    - name: copy a local Pythonweb.tar.gz to the remote /app
+    - name: copy a local projet_python.tar.gz to the remote /app
       copy:
         src: projet_python.tar.gz
         dest: /app
