@@ -18,6 +18,7 @@
         src: projet_python.tar.gz
         dest: /app/projet_python.tar.gz
         mode: 0777
+        owner: ec2-user
     - name: dezipper le fichier
       ansible.builtin.unarchive:
         src: /app/projet_python.tar.gz 
