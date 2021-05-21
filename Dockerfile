@@ -6,3 +6,4 @@ RUN tar -xzf projet_python.tar.gz
 WORKDIR /app/projet_python 
 RUN pip install -r requirements.txt
 CMD pytest
+CMD python app.py
