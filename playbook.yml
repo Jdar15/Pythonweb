@@ -18,6 +18,10 @@
         src: projet_python.tar.gz
         dest: /app
         mode: 0777
+    - name: copy dockerfile
+      copy: 
+        src: Dockerfile
+        dest: /app
     - name: generate docker image
       shell: cd /app && docker build -t formation/java:1.0 .
     - name: execution of the container
