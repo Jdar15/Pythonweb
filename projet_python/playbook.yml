@@ -15,7 +15,7 @@
         owner: ec2-user
     - name: copy a local Pythonweb.tar.gz to the remote /app
       copy:
-        src: var/lib/jenkins/workspace/Pythonapp/projet_python/projet_python.tar.gz
+        src: projet_python.tar.gz
         dest: /app
         mode: 0644
         remote_src=no
