@@ -1,0 +1,27 @@
+---
+- name: Afficher Hello World
+  hosts: all
+  remote_user: root
+
+  become: yes
+  tasks:
+    - name: installation Docker and docker start
+      shell: sudo amazon-linux-extras install -y docker && sudo systemctl start docker
+    - name: create a directory
+      file:
+        path: /app
+        state: directory
+        mode: '0777'
+        owner: ec2-user
+    - name: copy a local Pythonweb.tar.gz to the remote /app
+      copy:
+        src: Pythonweb.tar.gz
+        dest: /app
+        mode: 0644
+    - name: generate docker image
+      shell: cd /app && docker build -t formation/java:1.0 .
+    - name: execution of the container
+      shell: docker run --rm  --name conteneur_app formation/java:1.0
+      register: result
+    - debug:
+        var=result
