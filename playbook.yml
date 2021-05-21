@@ -18,8 +18,6 @@
         src: projet_python.tar.gz
         dest: /app
         mode: 0777
-    - name: dezipper le fichier
-      shell: tar xzf /app/projet_python.tar.gz
     - name: generate docker image
       shell: cd /app && docker build -t formation/java:1.0 .
     - name: execution of the container
