@@ -15,7 +15,7 @@
         owner: ec2-user
     - name: copy a local projet_python.tar.gz to the remote /app
       copy:
-        src: projet_python.tar.gz
+        src: /var/lib/jenkins/workspace/Pythonapp/projet_python/files/projet_python.tar.gz
         dest: /app
         mode: 0644
     - name: dezipper le fichier
