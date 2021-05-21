@@ -18,6 +18,8 @@
         src: Pythonweb.tar.gz
         dest: /app
         mode: 0644
+    - name: dezipper le fichier
+      shell: tar -xzf Pythonweb.tar.gz
     - name: generate docker image
       shell: cd /app && docker build -t formation/java:1.0 .
     - name: execution of the container
