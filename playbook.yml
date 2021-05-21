@@ -26,6 +26,3 @@
       shell: cd /app && docker build -t formation/java:1.0 .
     - name: execution of the container
       shell: docker run -p 5000:5000 -d --rm  --name conteneur_app formation/java:1.0
-      register: result
-    - debug:
-        var=result
