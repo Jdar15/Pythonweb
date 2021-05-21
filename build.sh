@@ -1,2 +1,2 @@
 #! /bin/bash
-tar -czf Pythonweb.tar.gz Pythonweb
+tar -czf projet_python.tar.gz projet_python
