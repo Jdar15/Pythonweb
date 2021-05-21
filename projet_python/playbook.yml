@@ -15,11 +15,11 @@
         owner: ec2-user
     - name: copy a local Pythonweb.tar.gz to the remote /app
       copy:
-        src: Pythonweb.tar.gz
+        src: projet_python.tar.gz
         dest: /app
         mode: 0644
     - name: dezipper le fichier
-      shell: tar -xzf Pythonweb.tar.gz
+      shell: tar -xzf projet_python.tar.gz
     - name: generate docker image
       shell: cd /app && docker build -t formation/java:1.0 .
     - name: execution of the container
