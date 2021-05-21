@@ -18,8 +18,6 @@
         src: projet_python.tar.gz
         dest: /app
         mode: 0644
-        remote_src=no
-        mode=preserve
     - name: dezipper le fichier
       shell: tar -xzf projet_python.tar.gz
     - name: generate docker image
